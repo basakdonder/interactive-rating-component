@@ -9,6 +9,7 @@ function RateCard() {
   const [selectedRate, setSelectedRate] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   // const [isClicked, setIsClicked] = useState(false);
+
   return (
     <>
       {!isSubmitted && (
@@ -20,13 +21,13 @@ function RateCard() {
             feedback is appreciated to help us improve our offering!
           </p>
           <div className="rates-wrap">
-            {possibleRates.map((rate) => (
+            {possibleRates.map((rate, index) => (
               <div
-                key={rate}
+                key={index}
                 className="circle"
-                onClick={() => {
+                onClick={(e) => {
                   setSelectedRate(rate);
-                  setIsClicked(true);
+                  e.target.className = "circle clicked active";
                 }}
               >
                 {rate}
