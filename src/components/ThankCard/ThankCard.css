@@ -1,0 +1,19 @@
+.thank-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.thank-card img {
+    margin-bottom: 30px;
+}
+
+.rate-wrap {
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: hsl(25, 97%, 53%);
+    background-color: hsl(213, 19%, 18%);
+}
