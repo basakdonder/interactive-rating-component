@@ -27,7 +27,7 @@ function RateCard() {
                 className="circle"
                 onClick={(e) => {
                   setSelectedRate(rate);
-                  e.target.className = "circle clicked active";
+                  e.target.className = "circle clicked";
                 }}
               >
                 {rate}
