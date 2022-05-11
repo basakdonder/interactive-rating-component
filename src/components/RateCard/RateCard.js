@@ -8,7 +8,6 @@ const possibleRates = [1, 2, 3, 4, 5];
 function RateCard() {
   const [selectedRate, setSelectedRate] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  // const [isClicked, setIsClicked] = useState(false);
 
   return (
     <>
@@ -21,13 +20,16 @@ function RateCard() {
             feedback is appreciated to help us improve our offering!
           </p>
           <div className="rates-wrap">
-            {possibleRates.map((rate, index) => (
+            {possibleRates.map((rate) => (
               <div
-                key={index}
-                className="circle"
-                onClick={(e) => {
-                  setSelectedRate(rate);
-                  e.target.className = "circle clicked";
+                key={rate}
+                className={selectedRate === rate ? "circle clicked" : "circle"}
+                onClick={() => {
+                  if (selectedRate === rate) {
+                    setSelectedRate();
+                  } else {
+                    setSelectedRate(rate);
+                  }
                 }}
               >
                 {rate}
